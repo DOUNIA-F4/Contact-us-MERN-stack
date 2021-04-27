@@ -5,6 +5,6 @@ const router = express.Router();
 router.get("/list", controllers.list);
 router.post("/create", controllers.create);
 router.post("/reply/:id", controllers.postreply);
-router.post("/singlecontact/:id", controllers.singleContact);
+router.get("/singlecontact/:id", controllers.singleContact);
 
 module.exports = router;

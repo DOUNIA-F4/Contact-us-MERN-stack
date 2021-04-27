@@ -30,7 +30,7 @@ module.exports = {
       })
       .catch((err) => res.json(err).status(500).end());
   },
-  findContact : async (req, res) => {
+  findContact: async (req, res) => {
     const { date } = req.body;
     const { email } = req.body;
     // console.log(date);
@@ -71,15 +71,14 @@ module.exports = {
       return res.status(500).json(error);
     }
   },
-  
 
-  singleContact : async (req, res) => {
-  const { id } = req.params;
-  try {
-    const currentContact = await Contact.findOne({ _id: id });
-    if (currentContact) return res.status(200).json(currentContact);
-  } catch (error) {
-    return res.status(500).json(error);
-  }
-}
+  singleContact: async (req, res) => {
+    const { id } = req.params;
+    try {
+      const currentContact = await contactmodel.findOne({ _id: id });
+      if (currentContact) return res.status(200).json(currentContact);
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  },
 };
